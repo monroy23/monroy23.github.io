@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acta de Diligencia - Generar PDF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ocultar solo los botones en el PDF */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            input, textarea {
+                border: none !important;
+                box-shadow: none !important;
+            }
+        }
+
+        /* Ajustar estilo del formulario */
+        input, textarea {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header text-center">
+        <h1>DIRECCIÓN DE PROTECCIÓN AMBIENTAL Y DESARROLLO SUSTENTABLE</h1>
+    </header>
+
+    <div class="container mt-5" id="formulario">
+        <h1 class="text-center mb-4">Acta de Diligencia</h1>
+        <form action="guardar_diligencia.php" method="POST">
+            <div class="mb-5">
+                <p>No habiendo otro asunto que tratar, se da por terminada la presente diligencia, siendo las 
+                    <input type="text" name="hora_final" placeholder="Hora" style="width: 80px;" required> horas del día 
+                    <input type="text" name="dia_final" placeholder="Día" style="width: 50px;" required> del mes de 
+                    <input type="text" name="mes_final" placeholder="Mes" style="width: 80px;" required> del año 
+                    <input type="text" name="anio_final" placeholder="Año" style="width: 60px;" required>, 
+                    firmando los que en ella participan para todos los efectos legales a que haya lugar, dejándose copia 
+                    de todo lo actuado consistente en <input type="text" name="fojas_final" placeholder="Cantidad de fojas" style="width: 50px;" required> 
+                    fojas en poder del/la C. <input type="text" name="nombre_final" placeholder="Nombre" style="width: 200px;" required>
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <label for="nombre_inspector" class="me-3">Nombre del Inspector:</label>
+                <input type="text" name="nombre_inspector" id="nombre_inspector" placeholder="Nombre del Inspector" required class="me-3">
+                
+                <label for="nombre_visitado" class="me-3">Nombre del Visitado:</label>
+                <input type="text" name="nombre_visitado" id="nombre_visitado" placeholder="Nombre del Visitado" required class="me-3">
+            </div>
+
+            <div class="mb-5">
+                <label for="nombre_testigo1" class="me-3">Nombre del Testigo 1:</label>
+                <input type="text" name="nombre_testigo1" id="nombre_testigo1" placeholder="Nombre del Testigo 1" required class="me-3">
+                
+                <label for="nombre_testigo2" class="me-3">Nombre del Testigo 2:</label>
+                <input type="text" name="nombre_testigo2" id="nombre_testigo2" placeholder="Nombre del Testigo 2" required class="me-3">
+            </div>
+
+            <div class="mb-5">
+                <p>Concluida la siguiente diligencia, si resulta alguna de las siguientes situaciones marcar a continuación:</p>
+                <table class="table">
+                    <tr>
+                        <td>
+                            <label for="situacion1">La persona que atendió en la diligencia o testigos se negaron a firmar el acta:</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="situacion1" id="situacion1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="situacion2">El interesado se negó a aceptar una copia de la misma:</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="situacion2" id="situacion2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="situacion3">En el lugar o zona no se encontró persona alguna para efectuar la diligencia, se levantará acta de tal circunstancia, programando una subsiguiente visita de inspección:</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="situacion3" id="situacion3">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="mb-5">
+                <label for="comentarios_adicionales">Comentarios Adicionales:</label>
+                <textarea name="comentarios_adicionales" id="comentarios_adicionales" class="form-control" rows="4"></textarea>
+            </div>
+
+           
+                <a href="javascript:genPDF()" class="btn btn-primary">Generar Reporte</a>
+                <a href="/denuncia/menu.php" class="btn btn-primary">Inicio</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Script para generar el PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function genPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Seleccionar el contenido del formulario
+            html2canvas(document.querySelector("#formulario")).then(canvas => {
+                const imgData = canvas.toDataURL("image/png");
+                const imgWidth = 190;
+                const pageHeight = doc.internal.pageSize.height;
+                const imgHeight = canvas.height * imgWidth / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+
+                doc.addImage(imgData, "PNG", 10, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    doc.addPage();
+                    doc.addImage(imgData, "PNG", 10, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+
+                doc.save("Acta_Diligencia.pdf");
+            });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

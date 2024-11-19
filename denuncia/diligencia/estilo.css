@@ -1,0 +1,194 @@
+/* General */
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Encabezado de página */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px 0;
+    background-color: #4b91dcd1; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    border-bottom: 3px solid #366ba4ef; /* Borde inferior */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Imágenes en las esquinas del encabezado */
+.header-image {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px; /* Tamaño de la imagen */
+    height: auto;
+}
+
+.header-image.left {
+    left: 20px;
+}
+
+.header-image.right {
+    right: 20px;
+}
+
+/* Ajustes responsive para que el encabezado se vea bien en móviles */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    .header-image {
+        width: 40px;
+    }
+}
+
+/* Títulos */
+h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #555;
+}
+
+/* Estilos de formulario */
+.form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+    outline: none;
+}
+
+select.form-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+/* Textarea */
+textarea.form-control {
+    resize: vertical;
+}
+
+/* Estilos de los Checkbox */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Estilos de la tabla */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 10px;
+    vertical-align: top;
+    border: 1px solid #ddd;
+}
+
+table input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* Botón de enviar */
+.btn-success {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #28a750;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    cursor: pointer;
+}
+
+/* Espaciado entre elementos */
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Ajustes en los campos de nombre (Inspector, Visitado, Testigo) */
+.input-container {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    width: 250px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .btn-success {
+        width: 100%;
+    }
+
+    table td {
+        font-size: 0.9rem;
+    }
+
+    .input-container {
+        width: 100%;
+        margin-right: 0;
+    }
+}

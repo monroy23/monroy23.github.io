@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denuncia Ciudadana</title>
+  <style>
+    .header {
+      display: flex;
+      align-items: center; /* Centra verticalmente los elementos */
+      gap: 350px; /* Espacio entre la imagen y el título */
+    }
+    .header-image {
+      height: 100px; /* Ajusta el tamaño de la imagen según necesites */
+    }
+    .header-title {
+      font-family: 'Bahnschrift Condensed', Arial, sans-serif;
+      text-align: left; /* Alinea el texto a la izquierda */
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="logo2024.png" alt="Logo Izquierda" class="header-image">
+    <h1 class="header-title">
+      H. Ayuntamiento Constitucional de Centro 
+      <center>2024 – 2027</ceneter>
+    </h1>
+  </div>
+</body>
+</html>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Estilos para la barra de navegación */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #831919;
+            padding: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 2;
+            background-color: #2690e7;
+            position: absolute;
+            top: 177px;
+            left: 0;
+            width: auto;
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s ease-out;
+        }
+
+        .nav-links.show {
+            height: auto;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        nav a:hover {
+            background: #575757;
+        }
+
+        /* Menú Hamburguesa */
+        .menu-icon {
+            display: block;
+            width: 30px;
+            height: 25px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+    background-color: rgb(255, 255, 255);
+    height: 12px; /* Grosor de la línea */
+    width: 150%; /* Aumenta la longitud de la línea */
+    position: absolute;
+    left: 95%; /* Centra la línea extendida */
+    border: 2px solid rgb(3, 82, 210);
+    transition: 0.1s;
+
+
+
+
+        }
+
+        .menu-icon div:nth-child(1) { top: 0; }
+        .menu-icon div:nth-child(2) { top: 10px; }
+        .menu-icon div:nth-child(3) { top: 20px; }
+
+        /* Menú Abierto */
+        .menu-icon.open div:nth-child(1) { top: 8px; }
+        .menu-icon.open div:nth-child(2) { opacity: 0; }
+        .menu-icon.open div:nth-child(3) { top: 16px; }
+
+        /* Estilos para la imagen de perfil y usuario */
+        .user-profile {
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Encabezado y formulario */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        header img { width: 100px; height: auto; }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-left: 10px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Botones */
+        .btn-success, .btn-primary {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(56, 11, 11, 0.1);
+        }
+
+        .btn-success:hover, .btn-primary:hover {
+            background-color: #006400;
+            border-color: #0056b3;
+            color: white;
+        }
+
+        .text-center { text-align: center; }
+    </style>
+</head!-- Sección: Infracciones -->
+            </div>
+<body>
+
+<!-- Barra de Navegación -->
+<nav>
+    
+    <div class="menu-icon" id="menu-icon">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- Encabezado -->
+<header>
+</header>
+
+    <div class="nav-links" id="nav-links">
+        <a href="denuncia_ciudadana.html">Registro De Denuncia</a>
+        <a href="acta.html">Registro De Acta</a>
+        <a href="guardar_denuncias.php">Denuncias</a>
+        <a href="guardar_acta.php">Actas</a>
+        <a href="/denuncia/diligencia/acta_diligencia.html">Acta de Diligencia</a>
+    </div>
+    
+        <div class="user-profile">
+            <img src="casita_2.png" alt="Perfil del usuario" onclick="irAlInicio()">
+        </div>
+        <script>
+            function irAlInicio() {
+                const confirmar = confirm("¿Quieres ir al inicio?");
+                if (confirmar) {
+                    window.location.href = "/denuncia/menu.php"; // Redirige a la página de inicio
+                }
+            }
+        </script>        
+
+    </div>
+</nav>
+<cenetr><h1>DIRECCIÓN DE PROTECCIÓN AMBIENTAL Y DESARROLLO SUSTENTABLE</h1></cenetr>
+
+</style>
+<!-- Encabezado -->
+<header class="page-header">
+</header>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Acta de Inspección</h1>
+    <form action="guardar_acta.php" method="POST">
+
+        <!-- Sección: Fecha, Número de Acta y Expediente Administrativo -->
+        <div class="row mb-4">
+            <div class="col">
+                <label for="fechaInspeccion" class="form-label">Fecha de Inspección:</label>
+                <input type="date" id="fechaInspeccion" name="fechaInspeccion" class="form-control" required>
+            </div>
+            <div class="col">
+                <label for="numeroActa" class="form-label">Número de Acta:</label>
+                <input type="text" id="numeroActa" name="numeroActa" class="form-control" required>
+            </div>
+            <div class="col">
+                <label for="expedienteAdministrativo" class="form-label">Expediente Administrativo:</label>
+                <input type="text" id="expedienteAdministrativo" name="expedienteAdministrativo" class="form-control" required>
+            </div>
+        </div>
+
+        <!-- Sección: Clausula -->
+        <h3>Datos de la Inspección</h3>
+        <div class="mb-4">
+            <label for="clausura" class="form-label">Clausura:</label>
+            <select id="clausura" name="clausura" class="form-select" required>
+                <option value="">Seleccione una opción</option>
+                <option value="Temporal">Temporal</option>
+                <option value="Definitiva">Definitiva</option>
+                <option value="Parcial">Parcial</option>
+                <option value="Total">Total</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="tipoContaminante" class="form-label">Tipo de Contaminante:</label>
+            <select id="tipoContaminante" name="tipoContaminante" class="form-select" required>
+                <option value="">Seleccione una opción</option>
+                <option value="EstablecimientoContaminante">Establecimiento Contaminante</option>
+                <option value="ObraContaminante">Obra Contaminante</option>
+                <option value="ActividadesContaminantes">Actividades Contaminantes</option>
+                <option value="FuenteContaminante">Fuente Contaminante</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="comentariosClausula" class="form-label">Observaciones de Clausura:</label>
+            <textarea id="comentariosClausula" name="comentariosClausula" rows="4" class="form-control" placeholder="Ingrese comentarios adicionales aquí..."></textarea>
+        </div>
+
+        <!-- Sección: Tipo de Suspensión -->
+        <h3>Suspensión</h3>
+        <div class="mb-4">
+            <label for="tipoSuspension" class="form-label">Tipo de Suspensión:</label>
+            <select id="tipoSuspension" name="tipoSuspension" class="form-select" required>
+                <option value="">Seleccione una opción</option>
+                <option value="Temporal">Temporal</option>
+                <option value="Definitiva">Definitiva</option>
+                <option value="Parcial">Parcial</option>
+                <option value="Total">Total</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="suspension" class="form-label">Suspensión:</label>
+            <select id="suspension" name="suspension" class="form-select" required onchange="toggleOtrasActividades(this)">
+                <option value="">Seleccione una opción</option>
+                <option value="Trabajos">Trabajos</option>
+                <option value="Procesos">Procesos</option>
+                <option value="Servicios">Servicios</option>
+                <option value="OtrasActividades">Otras Actividades</option>
+            </select>
+            <input type="text" id="otrasActividades" name="otrasActividades" class="form-control mt-2" placeholder="Especifique otras actividades" style="display: none;">
+        </div>
+
+        <div class="mb-4">
+            <label for="comentariosSuspension" class="form-label">Observaciones de Suspensión:</label>
+            <textarea id="comentariosSuspension" name="comentariosSuspension" rows="4" class="form-control" placeholder="Ingrese comentarios adicionales aquí..."></textarea>
+        </div>
+
+        <!-- Sección: Aseguramiento Precautorio -->
+        <h3>Aseguramiento Precautorio</h3>
+        <div class="mb-4">
+            <label for="aseguramientoPrecautorio" class="form-label">Aseguramiento Precautorio:</label>
+            <select id="aseguramientoPrecautorio" name="aseguramientoPrecautorio" class="form-select" required>
+                <option value="">Seleccione una opción</option>
+                <option value="Materiales">Materiales</option>
+                <option value="BienesInmuebles">Bienes Inmuebles</option>
+                <option value="Vehiculos">Vehículos</option>
+                <option value="Maquinaria">Maquinaria</option>
+                <option value="Utensilios">Utensilios</option>
+                <option value="Instrumentos">Instrumentos</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="comentariosAseguramiento" class="form-label">Observaciones de Aseguramiento:</label>
+            <textarea id="comentariosAseguramiento" name="comentariosAseguramiento" rows="4" class="form-control" placeholder="Ingrese comentarios adicionales aquí..."></textarea>
+        </div>
+
+        <!-- Sección: Neutralización -->
+        <h3>Neutralización o Cualquier Acción Análoga</h3>
+        <div class="mb-4">
+            <label for="neutralizacion" class="form-label">Neutralización o cualquier acción análoga:</label>
+            <select id="neutralizacion" name="neutralizacion" class="form-select" required>
+                <option value="">Seleccione una opción</option>
+                <option value="Obra">Obra</option>
+                <option value="Actividad">Actividad</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="comentariosNeutralizacion" class="form-label">Observaciones de Neutralización:</label>
+            <textarea id="comentariosNeutralizacion" name="comentariosNeutralizacion" rows="4" class="form-control" placeholder="Ingrese comentarios adicionales aquí..."></textarea>
+        </div>
+
+        <!-- Sección: Comentarios Generales -->
+        <h3>Comentarios Generales</h3>
+        <div class="mb-4">
+            <label for="comentariosGenerales" class="form-label">Comentarios Generales:</label>
+            <textarea id="comentariosGenerales" name="comentariosGenerales" rows="4" class="form-control" placeholder="Ingrese comentarios generales aquí..."></textarea>
+        </div>
+
+        <!-- Botón de Enviar -->
+    
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+    </form>
+</div>
+<!-- Bootstrap JS y dependencias -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Mostrar el campo de texto solo cuando se selecciona "Otras Actividades"
+    function toggleOtrasActividades(selectElement) {
+        const otrasActividadesField = document.getElementById("otrasActividades");
+        if (selectElement.value === "OtrasActividades") {
+            otrasActividadesField.style.display = "block";
+        } else {
+            otrasActividadesField.style.display = "none";
+            otrasActividadesField.value = ""; // Limpia el campo si no es seleccionado
+        }
+    }
+</script>
+</body>
+</html>
+<!-- JavaScript -->
+<script>
+    const menuIcon = document.getElementById('menu-icon');
+    const navLinks = document.getElementById('nav-links');
+
+    menuIcon.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+        menuIcon.classList.toggle('open');
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
